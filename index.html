@@ -1,43 +1,251 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Portofolio Neofhaldi Fraja Satosa</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Neofhaldi Praja Satosa — Portofolio</title>
+  <meta name="description" content="Portofolio Neofhaldi Praja Satosa — teknisi jaringan, instalasi WiFi, troubleshooting." />
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <!-- Font Awesome (ikon) -->
+  <script src="https://kit.fontawesome.com/a2d9f2f8d1.js" crossorigin="anonymous"></script>
   <style>
-    body { font-family: Arial, sans-serif; margin: 0; background: #f4f4f4; color: #333; }
-    header { background: #0078d7; color: white; text-align: center; padding: 30px 0; }
-    section { padding: 20px; max-width: 800px; margin: auto; }
-    .card { background: white; border-radius: 10px; padding: 20px; margin: 10px 0; box-shadow: 0 2px 6px rgba(0,0,0,0.1); }
-    h2 { color: #0078d7; }
+    :root{
+      --bg:#0f1724; --card:#0b1220; --accent:#06b6d4; --muted:#9aa4b2; --glass: rgba(255,255,255,0.03);
+      --radius:12px;
+      color-scheme: dark;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0; font-family:Inter, system-ui, sans-serif; background:
+      radial-gradient(1200px 400px at 10% 10%, rgba(6,182,212,0.06), transparent 6%),
+      radial-gradient(800px 300px at 90% 90%, rgba(99,102,241,0.04), transparent 6%),
+      var(--bg); color:#e6eef6; -webkit-font-smoothing:antialiased;
+      line-height:1.5;
+    }
+    .container{max-width:1100px;margin:40px auto;padding:24px}
+    header{display:flex;align-items:center;justify-content:space-between;gap:16px}
+    .brand{display:flex;gap:14px;align-items:center}
+    .logo{
+      width:64px;height:64px;border-radius:12px;background:linear-gradient(135deg,var(--accent),#6366f1);
+      display:flex;align-items:center;justify-content:center;font-weight:700;font-size:20px;color:#041025;
+      box-shadow: 0 6px 18px rgba(2,6,23,0.6);
+    }
+    nav a{color:var(--muted);text-decoration:none;margin-left:18px;font-weight:600}
+    nav a:hover{color:var(--accent)}
+    .hero{display:grid;grid-template-columns:1fr 360px;gap:28px;margin-top:28px;align-items:center}
+    .card{background:linear-gradient(180deg, rgba(255,255,255,0.02), transparent); padding:22px; border-radius:var(--radius); box-shadow: 0 6px 24px rgba(2,6,23,0.6); border:1px solid rgba(255,255,255,0.03)}
+    .intro h1{margin:0;font-size:28px}
+    .intro p{color:var(--muted);margin-top:10px}
+    .cta{margin-top:18px}
+    .btn{background:var(--accent);color:#041025;padding:10px 14px;border-radius:10px;border:none;font-weight:700;cursor:pointer;text-decoration:none}
+    .secondary{background:transparent;border:1px solid rgba(255,255,255,0.04);color:var(--muted);padding:10px 12px;border-radius:10px;margin-left:10px}
+    .profile{display:flex;flex-direction:column;gap:14px;align-items:center;text-align:center}
+    .avatar{width:160px;height:160px;border-radius:14px;background:linear-gradient(135deg,#0ea5a2,#6366f1); display:flex;align-items:center;justify-content:center;font-size:48px;font-weight:700;color:#041025}
+    .quick{display:flex;gap:10px;flex-wrap:wrap;justify-content:center}
+    .chip{background:var(--glass);padding:8px 12px;border-radius:999px;color:var(--muted);font-weight:600;border:1px solid rgba(255,255,255,0.02)}
+    /* sections */
+    section{margin-top:28px}
+    .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+    .skills-list{display:flex;flex-direction:column;gap:10px}
+    .skill{display:flex;justify-content:space-between;align-items:center}
+    .bar{height:10px;background:rgba(255,255,255,0.04);border-radius:999px;overflow:hidden;width:60%}
+    .bar > i{display:block;height:100%;background:linear-gradient(90deg,var(--accent),#6366f1)}
+    .projects{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+    .project-card{display:flex;gap:12px;align-items:center}
+    .project-thumb{width:100px;height:70px;border-radius:10px;background:linear-gradient(90deg,#0ea5a2,#6366f1);flex-shrink:0}
+    footer{margin-top:36px;color:var(--muted);text-align:center;padding:22px 0}
+    /* responsive */
+    @media (max-width:880px){
+      .hero{grid-template-columns:1fr}
+      .projects{grid-template-columns:1fr}
+      .grid-3{grid-template-columns:repeat(2,1fr)}
+    }
+    @media (max-width:520px){
+      .grid-3{grid-template-columns:1fr}
+      nav{display:none}
+      .brand{gap:10px}
+    }
+    /* contact form */
+    form .row{display:flex;gap:10px}
+    input,textarea{width:100%;padding:10px;border-radius:8px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:inherit}
+    textarea{min-height:110px;resize:vertical}
+    .socials{display:flex;gap:12px;justify-content:center}
+    .socials a{display:inline-flex;align-items:center;justify-content:center;width:44px;height:44px;border-radius:8px;background:rgba(255,255,255,0.02);color:var(--muted);text-decoration:none}
+    .tag{font-size:12px;color:var(--muted);background:rgba(255,255,255,0.02);padding:6px 8px;border-radius:8px}
   </style>
 </head>
 <body>
-  <header>
-    <h1>Neofhaldi Fraja Satosa</h1>
-    <p>Teknisi Jaringan | Troubleshooting | Instalasi Fiber Optik</p>
-  </header>
+  <div class="container">
+    <header>
+      <div class="brand">
+        <div class="logo">NP</div>
+        <div>
+          <div style="font-weight:700">Neofhaldi Praja Satosa</div>
+          <div style="font-size:13px;color:var(--muted)">Teknisi Jaringan • Instalasi WiFi • Troubleshooting</div>
+        </div>
+      </div>
+      <nav>
+        <a href="#about">Tentang</a>
+        <a href="#skills">Skill</a>
+        <a href="#projects">Proyek</a>
+        <a href="#contact">Kontak</a>
+      </nav>
+    </header>
 
-  <section>
-    <div class="card">
-      <h2>Tentang Saya</h2>
-      <p>Saya adalah teknisi jaringan berpengalaman dalam instalasi dan troubleshooting jaringan WiFi serta fiber optik.</p>
-    </div>
+    <main>
+      <section class="hero">
+        <div class="card intro">
+          <h1>Hai — saya Neofhaldi.</h1>
+          <p>Saya teknisi jaringan (SMKN 1 Subang, jurusan TKJ). Berpengalaman instalasi jaringan & WiFi, troubleshooting, dan dukungan teknis. Saya suka memecahkan masalah jaringan dan memastikan koneksi stabil untuk pengguna.</p>
+          <div class="cta">
+            <a class="btn" href="#contact">Hubungi Saya</a>
+            <a class="secondary" href="#" onclick="downloadResume()">Unduh CV</a>
+          </div>
 
-    <div class="card">
-      <h2>Keahlian</h2>
-      <ul>
-        <li>Instalasi Jaringan</li>
-        <li>Troubleshooting</li>
-        <li>Microsoft Excel</li>
-        <li>Kerja Tim & Komunikasi</li>
-      </ul>
-    </div>
+          <section id="about" style="margin-top:20px">
+            <div class="tag">Lokasi: Subang, Indonesia</div>
+            <h3 style="margin-top:14px">Ringkasan</h3>
+            <p style="color:var(--muted)">Spesialis jaringan lokal: instalasi kabel & wireless, konfigurasi router, troubleshooting lapangan, serta dokumentasi teknis (diagram jaringan, laporan). Terbiasa bekerja tim dan berkomunikasi dengan user.</p>
+          </section>
+        </div>
 
-    <div class="card">
-      <h2>Kontak</h2>
-      <p>Email: neofhaldi@example.com</p>
-    </div>
-  </section>
+        <aside class="card profile">
+          <div class="avatar">NP</div>
+          <div style="font-weight:700">Neofhaldi Praja Satosa</div>
+          <div style="color:var(--muted)">Teknisi Jaringan | Instalasi WiFi | Troubleshooting</div>
+          <div class="quick">
+            <div class="chip"><i class="fa-solid fa-school"></i>&nbsp;SMKN 1 Subang</div>
+            <div class="chip"><i class="fa-solid fa-network-wired"></i>&nbsp;TKJ</div>
+          </div>
+          <div style="width:100%;margin-top:8px" class="socials">
+            <a href="#" title="GitHub"><i class="fa-brands fa-github"></i></a>
+            <a href="#" title="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+            <a href="#" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
+          </div>
+        </aside>
+      </section>
+
+      <section id="skills" class="card">
+        <h3>Skill & Kompetensi</h3>
+        <div class="grid-3" style="margin-top:12px">
+          <div>
+            <h4>Teknis</h4>
+            <div class="skills-list">
+              <div class="skill"><div>Instalasi jaringan</div><div class="tag">Expert</div></div>
+              <div class="skill"><div>Konfigurasi Router & Switch</div><div class="tag">Advanced</div></div>
+              <div class="skill"><div>WiFi Site Survey</div><div class="tag">Advanced</div></div>
+              <div class="skill"><div>Fiber & LAN</div><div class="tag">Intermediate</div></div>
+            </div>
+          </div>
+
+          <div>
+            <h4>Perangkat Lunak & Tools</h4>
+            <div class="skills-list">
+              <div class="skill"><div>Winbox / Mikrotik</div><div class="tag">Advanced</div></div>
+              <div class="skill"><div>Microsoft Excel (reporting)</div><div class="tag">Advanced</div></div>
+              <div class="skill"><div>Ping, Traceroute, Wireshark</div><div class="tag">Intermediate</div></div>
+            </div>
+          </div>
+
+          <div>
+            <h4>Soft Skill</h4>
+            <div class="skills-list">
+              <div class="skill"><div>Problem Solving</div><div class="tag">Strong</div></div>
+              <div class="skill"><div>Komunikasi</div><div class="tag">Strong</div></div>
+              <div class="skill"><div>Kerja Tim</div><div class="tag">Strong</div></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="projects">
+        <h3 style="margin-bottom:12px">Proyek Unggulan</h3>
+        <div class="projects">
+          <div class="card project-card">
+            <div class="project-thumb"></div>
+            <div>
+              <div style="font-weight:700">Instalasi WiFi Kampus</div>
+              <div style="color:var(--muted);font-size:13px;margin-top:6px">Mendesain dan memasang jaringan WiFi pada 3 gedung, optimasi kanal, penyusunan dokumentasi.</div>
+              <div style="margin-top:8px;color:var(--muted);font-size:13px">Tools: Mikrotik, Ubiquiti, site survey.</div>
+            </div>
+          </div>
+
+          <div class="card project-card">
+            <div class="project-thumb"></div>
+            <div>
+              <div style="font-weight:700">Troubleshooting Jaringan Perkantoran</div>
+              <div style="color:var(--muted);font-size:13px;margin-top:6px">Analisis bottleneck, penggantian perangkat switching, dan optimasi QoS.</div>
+              <div style="margin-top:8px;color:var(--muted);font-size:13px">Hasil: latency turun 40%.</div>
+            </div>
+          </div>
+
+          <!-- Tambah lagi proyek jika perlu -->
+        </div>
+      </section>
+
+      <section id="contact" class="card">
+        <h3>Kontak</h3>
+        <p style="color:var(--muted)">Tertarik bekerja sama atau ingin bertanya? Isi form atau hubungi langsung.</p>
+
+        <div style="display:grid;grid-template-columns:1fr 360px;gap:16px;margin-top:12px">
+          <div>
+            <!-- simple mailto form (client-side) -->
+            <form onsubmit="sendMail(event)">
+              <div style="margin-bottom:8px"><input id="name" placeholder="Nama lengkap" required></div>
+              <div style="margin-bottom:8px"><input id="email" type="email" placeholder="Email" required></div>
+              <div style="margin-bottom:8px"><input id="subject" placeholder="Subjek" required></div>
+              <div style="margin-bottom:8px"><textarea id="message" placeholder="Pesan..." required></textarea></div>
+              <div><button class="btn" type="submit">Kirim</button></div>
+            </form>
+            <div id="sent" style="display:none;margin-top:10px;color:var(--accent)">Pesan siap dikirim — client mailto dibuka.</div>
+          </div>
+
+          <aside style="display:flex;flex-direction:column;gap:10px;align-items:flex-start">
+            <div class="tag"><i class="fa-solid fa-phone"></i> &nbsp; +62 8xx xxxx xxxx</div>
+            <div class="tag"><i class="fa-solid fa-envelope"></i> &nbsp; neofhaldi@email.com</div>
+            <div class="tag"><i class="fa-solid fa-location-dot"></i> &nbsp; Subang, Jawa Barat</div>
+            <div style="margin-top:12px;color:var(--muted)">Link profesional:</div>
+            <div style="display:flex;gap:8px;margin-top:6px">
+              <a class="socials" href="#" title="GitHub"><i class="fa-brands fa-github"></i></a>
+              <a class="socials" href="#" title="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+            </div>
+          </aside>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      © <span id="year"></span> Neofhaldi Praja Satosa — Semua hak cipta. Dibuat dengan ♥
+    </footer>
+  </div>
+
+  <script>
+    // small helpers
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    function sendMail(e){
+      e.preventDefault();
+      const name = encodeURIComponent(document.getElementById('name').value);
+      const email = encodeURIComponent(document.getElementById('email').value);
+      const subject = encodeURIComponent(document.getElementById('subject').value);
+      const message = encodeURIComponent(document.getElementById('message').value + "\\n\\nDari: " + name + " ("+email+")");
+      // opens default mail client (user action)
+      window.location.href = `mailto:neofhaldi@email.com?subject=${subject}&body=${message}`;
+      document.getElementById('sent').style.display = 'block';
+    }
+
+    function downloadResume(){
+      // Buat resume sederhana on-the-fly (plain text). Ganti jika mau file PDF.
+      const resume = `Neofhaldi Praja Satosa\\nTeknisi Jaringan\\n\\nRingkasan:\\n- Instalasi jaringan & WiFi\\n- Troubleshooting jaringan\\n- Konfigurasi router/switch (Mikrotik)\\n\\nKontak: neofhaldi@email.com`;
+      const blob = new Blob([resume], {type: 'text/plain'});
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url; a.download = 'CV_Neofhaldi_Praja_Satosa.txt';
+      document.body.appendChild(a); a.click();
+      a.remove(); URL.revokeObjectURL(url);
+    }
+  </script>
 </body>
 </html>
